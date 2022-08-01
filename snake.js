@@ -1,6 +1,7 @@
 import { getInputDirection } from "./controls.js"
+// import { Snake_Speed,} from "./Boost.js"
 
-const Snake_Speed = 5
+// let Snake_Speed
 const snakeBody = [{x: 11, y: 11}]
 let newSegments = 0
 
@@ -31,6 +32,10 @@ function expandSnake(amount) {
     newSegments += amount
 }
 
+// function boostSnake(Snake_Speed) {
+//     Snake_Speed += 1
+// }
+
 function onSnake(position, {ignoreHead = false} = {}) {
     return snakeBody.some((segment, index) => {
         if (ignoreHead && index === 0) return false
@@ -60,4 +65,4 @@ function addSegments() {
     newSegments = 0
 }
 
-export {Snake_Speed, update, draw, expandSnake, onSnake, getSnakeHead, snakeIntersect}
+export {update, draw, expandSnake, onSnake, getSnakeHead, snakeIntersect,}

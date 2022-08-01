@@ -2,12 +2,15 @@ import { onSnake, expandSnake} from './snake.js'
 import { randomGridPosition} from './grid.js'
 
 let apple = getRandomApplePosition()
+let applesEaten = 0
 const expansion_Rate = 1
 
 function update() {
     if (onSnake(apple)) {
         expandSnake(expansion_Rate)
         apple = getRandomApplePosition()
+        applesEaten += 1
+        // console.log(applesEaten)
     }
 }
 //!####### Renders snake
@@ -28,4 +31,4 @@ function getRandomApplePosition() {
     return newApplePosition
 }
 
-export {update, draw}
+export {update, draw, applesEaten}
